@@ -14,6 +14,7 @@ function handleOnDragEnd(e) {
   this.style.opacity = 1;
   list.forEach((item) => {
     item.classList.remove("over");
+    item.style.opacity = 1;
   });
 }
 
@@ -28,12 +29,15 @@ function handleOnDragEnter(e) {
   dragElement.style.opacity = 1;
   dragElement.style.transition = "opacity 1s";
   dragElement.innerHTML = this.innerHTML;
+  list.forEach((item) => {
+    item.style.opacity = 1;
+  });
   console.log("drag entered");
 }
 
 function handleOnDragLeave(e) {
   this.classList.remove("over");
-  console.log("Drag over");
+  console.log("Drag leave");
 }
 
 function handleOnDrop(e) {
